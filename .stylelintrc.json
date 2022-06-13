@@ -1,0 +1,14 @@
+{
+  "extends": [
+    "stylelint-config-standard",
+    "stylelint-config-prettier"
+  ],
+  "plugins": [
+    "stylelint-color-format"
+  ],
+  "rules": {
+    "color-format/format": {
+      "format": "hsla"
+    }
+  }
+}
