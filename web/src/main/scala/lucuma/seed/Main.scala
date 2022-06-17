@@ -6,8 +6,6 @@ package lucuma.seed
 import cats.effect.IO
 import cats.effect.IOApp
 import cats.effect.Sync
-import crystal.react.Ctx
-import japgolly.scalajs.react.callback.CallbackTo
 import japgolly.scalajs.react.extra.router._
 import japgolly.scalajs.react.vdom.html_<^._
 import log4cats.loglevel.LogLevelLogger
@@ -18,8 +16,6 @@ import typings.loglevel.mod.LogLevelDesc
 
 import scala.scalajs.js.annotation.JSExport
 import scala.scalajs.js.annotation.JSExportTopLevel
-
-object AppCtx extends Ctx[CallbackTo, AppContext[IO]] {}
 
 @JSExportTopLevel("Main")
 object Main extends IOApp.Simple {

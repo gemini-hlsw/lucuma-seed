@@ -11,9 +11,9 @@ import react.common.ReactFnProps
 final case class Home() extends ReactFnProps[Home](Home.component)
 
 object Home {
-  type Props = Home
+  protected type Props = Home
 
-  val component =
+  protected val component =
     ScalaFnComponent
       .withHooks[Props]
       .useContext(AppContext.ctx)

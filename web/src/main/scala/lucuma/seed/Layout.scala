@@ -12,9 +12,9 @@ final case class Layout(c: RouterCtl[Page], r: Resolution[Page])
     extends ReactFnProps[Layout](Layout.component)
 
 object Layout {
-  type Props = Layout
+  protected type Props = Layout
 
-  val component = ScalaFnComponent[Props] { props =>
+  protected val component = ScalaFnComponent[Props] { props =>
     <.div(^.cls  := "app")(
       <.h2(^.cls := "topbar", "Lucuma-Seed"),
       <.div(props.r.render())
