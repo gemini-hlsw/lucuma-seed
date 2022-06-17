@@ -6,7 +6,6 @@ package lucuma.seed
 import cats.effect.IO
 import cats.effect.IOApp
 import cats.effect.Sync
-import cats.effect.kernel.Resource
 import crystal.react.Ctx
 import japgolly.scalajs.react.callback.CallbackTo
 import japgolly.scalajs.react.extra.router._
@@ -57,9 +56,8 @@ object Main extends IOApp.Simple {
     } yield AppContext.ctx.provide(ctx)(router()).renderIntoDOM(node)).void
 
   override final def run: IO[Unit] =
-    (for {
-      logger <- Resource.eval(setupLogger[IO](LogLevelDesc.DEBUG))
-      _      <- Resource.eval(buildPage(logger))
-    } yield ()).useForever
-
+    for {
+      logger <- setupLogger[IO](LogLevelDesc.DEBUG)
+      _      <- buildPage(logger)
+    } yield ()
 }
