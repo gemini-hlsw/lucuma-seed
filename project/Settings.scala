@@ -6,11 +6,11 @@ import sbt.librarymanagement._
 object Settings {
 
   object LibraryVersions {
-    val cats             = "2.7.0"
+    val cats             = "2.8.0"
     val catsEffect       = "3.3.13"
-    val crystal          = "0.28.1"
+    val crystal          = "0.29.0"
     val fs2              = "3.2.7"
-    val log4Cats         = "2.3.1"
+    val log4Cats         = "2.3.2"
     val log4CatsLogLevel = "0.3.1"
     val lucumaUI         = "0.36.3"
     val monocle          = "3.1.0"
