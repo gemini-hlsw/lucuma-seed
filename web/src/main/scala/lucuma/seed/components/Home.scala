@@ -6,7 +6,7 @@ package lucuma.seed.components
 import japgolly.scalajs.react._
 import japgolly.scalajs.react.vdom.html_<^._
 import lucuma.seed.AppContext
-import react.common.ReactFnProps
+import react.common._
 
 final case class Home() extends ReactFnProps[Home](Home.component)
 
@@ -26,7 +26,7 @@ object Home {
           <.p("HELLO WORLD!"),
           <.p(
             s"You clicked ${clicks.value} time(s).",
-            <.button("Click me!", ^.onClick --> clicks.modState(_ + 1))
+            Button(label = "Click me!")(^.onClick --> clicks.modState(_ + 1))
           )
         )
       }
