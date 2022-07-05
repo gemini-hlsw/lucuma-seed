@@ -1,21 +1,8 @@
 const { defineConfig } = require('vite');
 const react = require('@vitejs/plugin-react');
-const { visualizer } = require('rollup-plugin-visualizer');
 const path = require('path');
 const fs = require('fs');
-const ViteFonts = require('vite-plugin-fonts');
 const mkcert = require('vite-plugin-mkcert');
-
-const fontImport = ViteFonts.Plugin({
-  google: {
-    families: [
-      {
-        name: 'Lato',
-        styles: 'ital,wght@0,400;0,700;1,400;1,700',
-      },
-    ],
-  },
-});
 
 // https://vitejs.dev/config/
 module.exports = ({ command, mode }) => {
@@ -24,7 +11,6 @@ module.exports = ({ command, mode }) => {
   const sjs = isProduction
     ? path.resolve(scalaClassesDir, 'web-opt')
     : path.resolve(scalaClassesDir, 'web-fastopt');
-  const rollupPlugins = isProduction ? [] : [visualizer()];
   const common = path.resolve(__dirname, 'common/');
   const webappCommon = path.resolve(common, 'src/main/webapp/');
   const imagesCommon = path.resolve(webappCommon, 'images');
@@ -89,17 +75,6 @@ module.exports = ({ command, mode }) => {
     build: {
       emptyOutDir: true,
       chunkSizeWarningLimit: 20000,
-      terserOptions: {
-        sourceMap: false,
-        compress: {
-          passes: 2,
-          toplevel: true,
-          ecma: 2015,
-        },
-      },
-      rollupOptions: {
-        plugins: rollupPlugins,
-      },
       outDir: path.resolve(__dirname, 'deploy/static'),
     },
     plugins: [
@@ -107,7 +82,6 @@ module.exports = ({ command, mode }) => {
         ? null
         : mkcert.default({ hosts: ['localhost', 'local.lucuma.xyz'] }),
       react(),
-      fontImport
     ],
   };
 };
