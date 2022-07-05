@@ -6,6 +6,7 @@ package lucuma.seed
 import cats.effect.IO
 import cats.effect.IOApp
 import cats.effect.Sync
+import cats.effect.unsafe.implicits._
 import japgolly.scalajs.react.extra.router._
 import japgolly.scalajs.react.vdom.html_<^._
 import log4cats.loglevel.LogLevelLogger
@@ -18,15 +19,10 @@ import scala.scalajs.js.annotation.JSExport
 import scala.scalajs.js.annotation.JSExportTopLevel
 
 @JSExportTopLevel("Main")
-object Main extends IOApp.Simple {
+object Main {
 
   @JSExport
-  def resetIOApp(): Unit =
-    // https://github.com/typelevel/cats-effect/pull/2114#issue-687064738
-    cats.effect.unsafe.IORuntime.asInstanceOf[{ def resetGlobal(): Unit }].resetGlobal()
-
-  @JSExport
-  def runIOApp(): Unit = main(Array.empty)
+  def runIOApp(): Unit = run.unsafeRunAndForget()
 
   def setupLogger[F[_]: Sync](level: LogLevelDesc): F[Logger[F]] = Sync[F].delay {
     LogLevelLogger.setLevel(level)
@@ -51,7 +47,7 @@ object Main extends IOApp.Simple {
       node <- setupDOM[IO]
     } yield AppContext.ctx.provide(ctx)(router()).renderIntoDOM(node)).void
 
-  override final def run: IO[Unit] =
+  def run: IO[Unit] =
     for {
       logger <- setupLogger[IO](LogLevelDesc.DEBUG)
       _      <- buildPage(logger)
