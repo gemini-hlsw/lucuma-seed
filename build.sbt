@@ -17,8 +17,15 @@ addCommandAlias(
   "; headerCreateAll; fixImports; scalafmtAll; fixCSS"
 )
 
-ThisBuild / description       := "Lucuma-Seed"
-Global / onChangedBuildSource := ReloadOnSourceChanges
+ThisBuild / description        := "Lucuma-Seed"
+Global / onChangedBuildSource  := ReloadOnSourceChanges
+ThisBuild / resolvers += Resolver.sonatypeRepo("snapshots")
+ThisBuild / scalaVersion       := "3.1.3"
+ThisBuild / crossScalaVersions := Seq("3.1.3")
+
+ThisBuild / scalacOptions ++= Seq(
+  "-language:implicitConversions"
+)
 
 // Libs common to JVM and JS projects.
 lazy val commonLibSettings = Seq(

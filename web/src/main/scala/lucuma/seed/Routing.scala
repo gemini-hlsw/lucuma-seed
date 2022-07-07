@@ -6,6 +6,7 @@ package lucuma.seed
 import japgolly.scalajs.react.extra.router._
 import lucuma.seed.Page._
 import lucuma.seed.components.Home
+import react.common._
 
 object Routing {
 

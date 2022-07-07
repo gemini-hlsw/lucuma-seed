@@ -6,16 +6,16 @@ import sbt.librarymanagement._
 object Settings {
 
   object LibraryVersions {
-    val cats             = "2.8.0"
-    val catsEffect       = "3.3.13"
-    val crystal          = "0.29.0"
-    val fs2              = "3.2.9"
-    val log4Cats         = "2.3.2"
-    val log4CatsLogLevel = "0.3.1"
-    val lucumaUI         = "0.36.3"
-    val monocle          = "3.1.0"
-    val reactCommon      = "0.17.0"
-    val scalaJsReact     = "2.1.1"
+    val cats               = "2.8.0"
+    val catsEffect         = "3.3.13"
+    val crystal            = "0.0.0+1-8dd5205c-SNAPSHOT"
+    val fs2                = "3.2.9"
+    val log4Cats           = "2.3.2"
+    val log4CatsLogLevel   = "0.3.1"
+    val lucumaUI           = "0.36.3"
+    val monocle            = "3.1.0"
+    val scalaJsReact       = "2.1.1"
+    val lucumaReactVersion = "1.0-0f7eb8e-SNAPSHOT"
   }
 
   object Libraries {
@@ -68,9 +68,9 @@ object Settings {
 
     val ReactCommon = Def.setting(
       deps(
-        "io.github.cquiroz.react" %%% "common",
-        "io.github.cquiroz.react" %%% "cats"
-      )(reactCommon)
+        "edu.gemini" %%% "lucuma-react-common",
+        "edu.gemini" %%% "lucuma-react-cats"
+      )(lucumaReactVersion)
     )
 
     val ScalaJSReact = Def.setting(
