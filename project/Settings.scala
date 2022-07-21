@@ -10,7 +10,7 @@ object Settings {
     val catsEffect         = "3.3.13"
     val crystal            = "0.0.0+1-8dd5205c-SNAPSHOT"
     val fs2                = "3.2.9"
-    val log4Cats           = "2.4.0"
+    val log4Cats           = "2.3.2"
     val log4CatsLogLevel   = "0.3.1"
     val lucumaUI           = "0.36.3"
     val monocle            = "3.1.0"
