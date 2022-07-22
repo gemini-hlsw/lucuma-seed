@@ -7,7 +7,7 @@ object Settings {
 
   object LibraryVersions {
     val cats               = "2.8.0"
-    val catsEffect         = "3.3.14"
+    val catsEffect         = "3.3.13"
     val crystal            = "0.0.0+1-8dd5205c-SNAPSHOT"
     val fs2                = "3.2.9"
     val log4Cats           = "2.3.2"
