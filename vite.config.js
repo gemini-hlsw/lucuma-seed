@@ -1,8 +1,11 @@
 const { defineConfig } = require('vite');
 const react = require('@vitejs/plugin-react');
+// const reactPreset = require('vite-preset-react')
 const path = require('path');
 const fs = require('fs');
 const mkcert = require('vite-plugin-mkcert');
+// const externals = require('vite-plugin-externals')
+// const resolveExternals = require('vite-plugin-resolve-externals')
 
 // https://vitejs.dev/config/
 module.exports = ({ command, mode }) => {
@@ -81,7 +84,14 @@ module.exports = ({ command, mode }) => {
       isProduction
         ? null
         : mkcert.default({ hosts: ['localhost', 'local.lucuma.xyz'] }),
-      react(),
+      react()
+      // reactPreset.default({injectReact: true})
+      // resolveExternals({
+      //   react: 'React'
+      // })
+      // externals.viteExternalsPlugin({
+      //   react: 'React'
+      // })
     ],
   };
 };

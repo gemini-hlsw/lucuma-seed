@@ -12,10 +12,10 @@ object Settings {
     val fs2                = "3.2.11"
     val log4Cats           = "2.4.0"
     val log4CatsLogLevel   = "0.3.1"
-    val lucumaUI           = "0.36.3"
+    // val lucumaUI           = "0.36.3"
     val monocle            = "3.1.0"
     val scalaJsReact       = "2.1.1"
-    val lucumaReactVersion = "1.0-0f7eb8e-SNAPSHOT"
+    val lucumaReactVersion = "1.0-0b93b77-SNAPSHOT"
   }
 
   object Libraries {
@@ -69,7 +69,10 @@ object Settings {
     val ReactCommon = Def.setting(
       deps(
         "edu.gemini" %%% "lucuma-react-common",
-        "edu.gemini" %%% "lucuma-react-cats"
+        "edu.gemini" %%% "lucuma-react-cats",
+        // "edu.gemini" %%% "lucuma-react-datepicker",
+        // "edu.gemini" %%% "lucuma-react-semantic-ui"
+        "edu.gemini" %%% "lucuma-react-prime-react"
       )(lucumaReactVersion)
     )
 
