@@ -32,7 +32,6 @@ lazy val commonLibSettings = Seq(
   libraryDependencies ++=
     Cats.value ++
       CatsEffect.value ++
-      Crystal.value ++
       FS2.value ++
       Monocle.value
 )

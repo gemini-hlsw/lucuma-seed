@@ -15,7 +15,7 @@ object Settings {
     val lucumaUI           = "0.36.3"
     val monocle            = "3.1.0"
     val scalaJsReact       = "2.1.1"
-    val lucumaReactVersion = "1.0-0f7eb8e-SNAPSHOT"
+    val lucumaReactVersion = "0.1.0"
   }
 
   object Libraries {
@@ -68,8 +68,7 @@ object Settings {
 
     val ReactCommon = Def.setting(
       deps(
-        "edu.gemini" %%% "lucuma-react-common",
-        "edu.gemini" %%% "lucuma-react-cats"
+        "edu.gemini" %%% "lucuma-react-common"
       )(lucumaReactVersion)
     )
 
