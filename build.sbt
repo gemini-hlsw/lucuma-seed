@@ -20,8 +20,8 @@ addCommandAlias(
 ThisBuild / description        := "Lucuma-Seed"
 Global / onChangedBuildSource  := ReloadOnSourceChanges
 ThisBuild / resolvers += Resolver.sonatypeRepo("snapshots")
-ThisBuild / scalaVersion       := "3.2.0"
-ThisBuild / crossScalaVersions := Seq("3.2.0")
+ThisBuild / scalaVersion       := "3.2.2"
+ThisBuild / crossScalaVersions := Seq("3.2.2")
 
 ThisBuild / scalacOptions ++= Seq(
   "-language:implicitConversions"
