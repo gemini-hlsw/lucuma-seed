@@ -15,7 +15,7 @@ object Settings {
     val lucumaUI           = "0.36.3"
     val monocle            = "3.1.0"
     val scalaJsReact       = "2.1.1"
-    val lucumaReactVersion = "0.1.0"
+    val lucumaReactVersion = "0.32.0"
   }
 
   object Libraries {
