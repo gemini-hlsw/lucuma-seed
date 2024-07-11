@@ -14,7 +14,7 @@ object Settings {
     val log4CatsLogLevel   = "0.3.1"
     val lucumaUI           = "0.36.3"
     val monocle            = "3.1.0"
-    val scalaJsReact       = "2.1.1"
+    val scalaJsReact       = "2.1.2"
     val lucumaReactVersion = "0.44.0"
   }
 
